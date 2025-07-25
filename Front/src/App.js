@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import SearchForm from './SearchForm';
-import FlightList from './FlightList';
+import SearchForm from './components/SearchForm';
+import FlightList from './components/FlightList';
+import "./App.css"
 
 function App() {
   const [flights, setFlights] = useState([]);

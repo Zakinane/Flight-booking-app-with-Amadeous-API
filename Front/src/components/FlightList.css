@@ -1,0 +1,14 @@
+.flight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flight div {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
