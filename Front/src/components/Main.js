@@ -5,11 +5,12 @@ import FlightList from "./FlightList";
 
 function Main() {
   const [flights, setFlights] = useState([]);
+  const [search, setSearch] = useState(false);
 
   return (
     <div className="Main">
-      <SearchForm onResults={setFlights} />
-      <FlightList flights={flights} />
+      <SearchForm onResults={setFlights} onSearch={setSearch} />
+      <FlightList flights={flights} search={search} />
     </div>
   );
 }

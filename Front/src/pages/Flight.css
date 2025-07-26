@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    align-self: center;
+  }
+}
+
+.buy {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}

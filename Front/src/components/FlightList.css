@@ -18,6 +18,8 @@
 }
 
 .flight div {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border: 1px solid #ddd;
   padding: 15px;
@@ -25,4 +27,21 @@
   width: 300px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  p {
+    margin: 7px;
+  }
+  a {
+    align-self: center;
+  }
+  button {
+    margin-top: 3px;
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
+
