@@ -1,16 +1,28 @@
-import { useState } from 'react';
-import SearchForm from './components/SearchForm';
-import FlightList from './components/FlightList';
-import "./App.css"
+import "./App.css";
+import SearchPage from "./pages/SearchPage";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Error from "./pages/Error";
+import Account from "./pages/Account";
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [flights, setFlights] = useState([]);
-
   return (
-    <div>
-      <h1>Recherche de Vols</h1>
-      <SearchForm onResults={setFlights} />
-      <FlightList flights={flights} />
+    <div className="App">
+      <BrowserRouter>
+        {" "}
+        <Header />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<SearchPage />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

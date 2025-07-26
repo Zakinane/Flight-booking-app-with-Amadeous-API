@@ -2,6 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 import "./SearchForm.css";
 
+
+import CountrySelect from "./MaterialUI/CountrySelect";
+import DatePicker from "./MaterialUI/DatePicker";
+import Button from "@mui/material/Button";
+
+
+import flights from "../data/flights.json";
+
 const SearchForm = ({ onResults }) => {
   const [from, setFrom] = useState("France");
   const [to, setTo] = useState("Spain");
@@ -16,9 +24,7 @@ const SearchForm = ({ onResults }) => {
       // });
       // onResults(res.data.data);
 
-      const response = await fetch("/flights.json");
-      const allFlights = await response.json();
-
+      const allFlights = flights;
       // Filter
       const filteredFlights = allFlights.filter((flight) => {
         return (
@@ -36,24 +42,16 @@ const SearchForm = ({ onResults }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        value={from}
-        onChange={(e) => setFrom(e.target.value)}
-        placeholder="'/Pays'/ de départ"
-      />
-      <input
-        value={to}
-        onChange={(e) => setTo(e.target.value)}
-        placeholder="'/Pays'/ d'arrivée"
-      />
-      <input
-        type="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-      />
-      <button type="submit">Rechercher</button>
-    </form>
+    <div className="SearchForm">
+      <h1>Recherche de Vols</h1>
+      <form onSubmit={handleSubmit}>
+        <CountrySelect value={from} onChange={setFrom} label="From" />
+        <CountrySelect value={to} onChange={setTo} label="To" />
+        <DatePicker date={date} setDate={setDate} />
+
+        <Button variant="contained" type="submit">Search</Button>
+      </form>
+    </div>
   );
 };
 

@@ -1,0 +1,13 @@
+@media screen and (max-width: 875px) {
+  .Main {
+    flex-direction: column !important;
+  }
+}
+.Main {
+  justify-self: center;
+  display: flex;
+  column-gap: 30px;
+  row-gap: 20px;
+  flex-direction: row;
+  margin: 20px 20px 0px 20px;
+}

@@ -1,0 +1,31 @@
+@media screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+
+.footer {
+    z-index: 100;
+  background-color: #1d55b6;
+  color: #fff;
+  margin-top: 20px;
+  padding: 20px 25px;
+  text-align: center;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+}
+
+.footer a {
+  color: #a8d4ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
